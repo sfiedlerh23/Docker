@@ -1,0 +1,11 @@
+# Use an official Python runtime as a parent image
+FROM python:3.10-slim-buster
+
+# Set the working directory to /app
+WORKDIR /app
+
+# Copy the app directory contents into the container at /app
+COPY app/ /app
+
+# Run computation.py when the container launches
+CMD ["python", "computation.py"]
