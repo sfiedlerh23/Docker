@@ -4,8 +4,14 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>My first dynamic Website</title>
+    <title>Titanic Dataset</title>
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <style>
+        .center {
+            margin: 0 auto; /* This will center the div */
+            width: 80%; /* Adjust width as needed */
+        }
+    </style>
 </head>
 
 <body>
@@ -19,14 +25,12 @@
         </nav>
     </header>
     <main>
-        <h1>I have been seen {{ count }} times.</h1>
-        <a href="https://www.hwr-berlin.de/en/">Visit HWR Berlin</a>
-        <img src="{{ url_for('static', filename='hwr_image.jpg') }}" alt="HWR Berlin Image">
-        <ul>
-            {% for i in range(1, count+1) %}
-            <li>{{ i }}: Hello {{ name }}! </li>
-            {% endfor %}
-        </ul>
+        <h1>Titanic Dataset</h1>
+        <p>Count: {{ count }}</p> <!-- Überprüfen Sie, ob count hier richtig verwendet wird -->
+        <div class="center"> <!-- Add this div with the 'center' class -->
+            {{ titanic_table | safe }}
+        </div>
+        <img src="{{ url_for('static', filename='survival_chart.png') }}" alt="Survival Chart">
     </main>
     <footer>
         Made with ❤️ by Hendrik
